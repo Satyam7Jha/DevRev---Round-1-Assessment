@@ -1,0 +1,28 @@
+#container{
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+
+}
+
+#searchBar-filter-container{
+   display: flex;
+   justify-content: space-between;
+   
+}
+
+#filter-modal{
+    display:flex;
+    position: absolute;
+    width: 150px;
+    border:3px solid #1976d2;
+    right:0;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin-right: 100px;
+    z-index: 100;
+    margin-top: 2px;
+}
+

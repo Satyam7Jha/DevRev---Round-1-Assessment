@@ -1,0 +1,85 @@
+.filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 180px;
+    height: 45px;
+    left: 1151px;
+    top: 156px;
+    border: 5px solid #1976d2;
+    border-radius: 40px;
+    cursor: pointer;
+    }
+
+
+
+.filter:hover{
+    opacity: 0.8;
+}
+.filter-icon{
+    width: 20px;
+    height: 25px;
+    margin-right: 15px;
+
+}
+.filter-text{
+  
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    margin-left: 15px;
+    color: #1976d2;
+
+    flex: none;
+  
+  
+}
+.filter-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+    width: 120px;
+    margin-left: 6px;
+}
+
+.text1{
+    font-family: 'Noto Serif';
+font-style: normal;
+font-weight: 500;
+font-size: 25px;
+line-height: 40px;
+}
+
+
+
+
+@media (max-width: 600px) {
+   
+  
+    
+    .filter-icon{
+        width: 12px;
+        height: 18px;
+      
+    }
+    .filter-text{
+        
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 36px;
+        
+    }
+
+    .text1{
+        font-family: 'Noto Serif';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+    }
+    
+}
