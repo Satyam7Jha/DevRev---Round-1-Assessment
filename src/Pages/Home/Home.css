@@ -26,3 +26,19 @@
     margin-top: 2px;
 }
 
+@media screen and (max-width: 600px) {
+
+    #container{
+
+        padding-left: 20px;
+        padding-right:20;
+        padding-top: 30;
+        min-width: 500px;
+    
+    }
+    #filter-modal{
+        margin-right: -140px;
+    }
+    
+    
+ }

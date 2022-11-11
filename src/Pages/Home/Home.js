@@ -58,6 +58,7 @@ export default function Home() {
           <FilterModal setSearchBar={setSearchBar} searchBar={searchBar} />
         </div>
       )}
+
       <TableComponent
         data={bookData}
         skip={skip}

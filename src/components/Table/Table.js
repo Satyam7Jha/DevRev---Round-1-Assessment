@@ -10,12 +10,23 @@ import {
 } from "@mui/material";
 
 import "./Table.css";
+import Lottie from "react-lottie";
 import BasicSelect from "../DropDown";
-import backword from "../../assets/backword.png";
 import right from "../../assets/right.png";
+import Tooltip from "@mui/material/Tooltip";
+import backword from "../../assets/backword.png";
+import NoDataAnimation from "../../assets/NoData.json";
 import IconButton from "@mui/material/IconButton";
 
 function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: NoDataAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <div className="table-container">
       <TableContainer component={Paper}>
@@ -39,7 +50,7 @@ function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell>{skip + ind + 1}</TableCell>
-                <TableCell>{row.isbn}</TableCell>
+                <TableCell>{row.isbn.toString().slice(0, 6)}</TableCell>
                 <TableCell align={"left"}> {row.author}</TableCell>
                 <TableCell align={"left"}>{row.title}</TableCell>
                 <TableCell align={"left"}>{row.Subject}</TableCell>
@@ -49,6 +60,22 @@ function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
           </TableBody>
         </Table>
       </TableContainer>
+      {data.length === 0 && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Lottie
+            id="animation"
+            options={defaultOptions}
+            height={400}
+            width={500}
+          />
+        </div>
+      )}
 
       <div id="footer-container">
         <div
@@ -61,28 +88,28 @@ function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
           }}
         >
           <div style={{}}>
-            <IconButton
-              onClick={() => {
-                if (skip - limit >= 0) setSkip(skip - limit);
-                else {
-                  alert("Cant go below 0");
-                }
-              }}
-            >
-              <img style={{ height: "20px" }} src={backword} />
-            </IconButton>
-
-            <IconButton
-              onClick={() => {
-                if (parseInt(skip / limit) + 1 < totalPage) {
-                  setSkip(skip + limit);
-                } else {
-                  alert("No more Data To show!");
-                }
-              }}
-            >
-              <img style={{ height: "20px" }} src={right} />
-            </IconButton>
+            <Tooltip title="Previous Page" placement="bottom">
+              <IconButton
+                onClick={() => {
+                  if (skip - limit >= 0) setSkip(skip - limit);
+                }}
+              >
+                <img style={{ height: "20px" }} src={backword} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Next Page" placement="bottom">
+              <IconButton
+                onClick={() => {
+                  if (parseInt(skip / limit) + 1 < totalPage) {
+                    setSkip(skip + limit);
+                  } else {
+                    alert("No more Data To show!!");
+                  }
+                }}
+              >
+                <img style={{ height: "20px" }} src={right} />
+              </IconButton>
+            </Tooltip>
           </div>
           <p style={{ marginLeft: "10px", marginRight: "5px" }}>
             Page No: {parseInt(skip / limit) + 1} out of{" "}
