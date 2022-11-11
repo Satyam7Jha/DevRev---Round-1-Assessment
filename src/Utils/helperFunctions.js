@@ -40,5 +40,5 @@ export const filterBooks = (
       }
     }
   }
-  return temp.slice(skip, skip + limit);
+  return { data: temp.slice(skip, skip + limit), totalLenght: temp.length };
 };

@@ -13,6 +13,7 @@ export default function Home() {
   const [filterModal, setFilterModal] = useState(false);
   const [skip, setSkip] = useState(0);
   const [limit, setLimit] = useState(10);
+  const [totalPages, setTotalPages] = useState(BOOKDATA.length);
   const [searchBar, setSearchBar] = useState({
     searchValue: "",
     searchType: "Author",
@@ -21,15 +22,20 @@ export default function Home() {
   });
 
   useEffect(() => {
-    setBookData(
-      filterBooks(
-        searchBar.searchType,
-        searchBar.searchValue,
-        BOOKDATA,
-        searchBar.Subject,
-        skip,
-        limit
-      )
+    let filterData = filterBooks(
+      searchBar.searchType,
+      searchBar.searchValue,
+      BOOKDATA,
+      searchBar.Subject,
+      skip,
+      limit
+    );
+    setBookData(filterData["data"]);
+    setTotalPages(
+      parseInt(filterData["totalLenght"] / limit) ==
+        filterData["totalLenght"] / limit
+        ? filterData["totalLenght"] / limit
+        : parseInt(filterData["totalLenght"] / limit) + 1
     );
   }, [searchBar.searchButton, searchBar.Subject, skip, limit]);
 
@@ -58,6 +64,7 @@ export default function Home() {
         limit={limit}
         setSkip={setSkip}
         setLimit={setLimit}
+        totalPage={totalPages}
       />
     </div>
   );

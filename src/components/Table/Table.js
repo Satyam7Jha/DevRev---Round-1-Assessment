@@ -15,7 +15,7 @@ import backword from "../../assets/backword.png";
 import right from "../../assets/right.png";
 import IconButton from "@mui/material/IconButton";
 
-function TableComponent({ data, skip, limit, setSkip, setLimit }) {
+function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
   return (
     <div className="table-container">
       <TableContainer component={Paper}>
@@ -61,29 +61,32 @@ function TableComponent({ data, skip, limit, setSkip, setLimit }) {
           }}
         >
           <div style={{}}>
-            <IconButton>
-              <img
-                style={{ height: "20px" }}
-                src={backword}
-                onClick={() => {
-                  if (skip - limit >= 0) setSkip(skip - limit);
-                  else {
-                    alert("Cant go below 0");
-                  }
-                }}
-              />
+            <IconButton
+              onClick={() => {
+                if (skip - limit >= 0) setSkip(skip - limit);
+                else {
+                  alert("Cant go below 0");
+                }
+              }}
+            >
+              <img style={{ height: "20px" }} src={backword} />
             </IconButton>
 
-            <IconButton>
-              <img
-                style={{ height: "20px" }}
-                src={right}
-                onClick={() => setSkip(skip + limit)}
-              />
+            <IconButton
+              onClick={() => {
+                if (parseInt(skip / limit) + 1 < totalPage) {
+                  setSkip(skip + limit);
+                } else {
+                  alert("No more Data To show!");
+                }
+              }}
+            >
+              <img style={{ height: "20px" }} src={right} />
             </IconButton>
           </div>
           <p style={{ marginLeft: "10px", marginRight: "5px" }}>
-            Page No: {parseInt(skip / limit) + 1}
+            Page No: {parseInt(skip / limit) + 1} out of{" "}
+            {totalPage === 0 ? 1 : totalPage}
           </p>
         </div>
         <BasicSelect
@@ -92,7 +95,7 @@ function TableComponent({ data, skip, limit, setSkip, setLimit }) {
             setLimit(value);
           }}
           value={limit}
-          valueList={[5, 10, 25, 50, 75, 100]}
+          valueList={[10, 25, 50, 75, 100]}
         />
       </div>
     </div>
