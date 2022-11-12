@@ -18,7 +18,17 @@ import backword from "../../assets/backword.png";
 import NoDataAnimation from "../../assets/NoData.json";
 import IconButton from "@mui/material/IconButton";
 
-function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
+function TableComponent({
+  data,
+  skip,
+  limit,
+  setSkip,
+  setLimit,
+  totalPage,
+  resultCount,
+  sortColoum,
+  setSortColoum,
+}) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -38,8 +48,9 @@ function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
 
               <TableCell align={"left"}>Author</TableCell>
               <TableCell align={"left"}>Title</TableCell>
+              <TableCell align={"left"}>Date</TableCell>
+              <TableCell align={"center"}>Aavailable Qty</TableCell>
               <TableCell align={"left"}>Catogry</TableCell>
-              <TableCell align={"center"}>Qty</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -53,8 +64,9 @@ function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
                 <TableCell>{row.isbn.toString().slice(0, 6)}</TableCell>
                 <TableCell align={"left"}> {row.author}</TableCell>
                 <TableCell align={"left"}>{row.title}</TableCell>
-                <TableCell align={"left"}>{row.Subject}</TableCell>
+                <TableCell align={"left"}>{row.date}</TableCell>
                 <TableCell align={"center"}>{row.availableItems}</TableCell>
+                <TableCell align={"left"}>{row.Subject}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -116,14 +128,19 @@ function TableComponent({ data, skip, limit, setSkip, setLimit, totalPage }) {
             {totalPage === 0 ? 1 : totalPage}
           </p>
         </div>
-        <BasicSelect
-          setFunction={(value) => {
-            setSkip(0);
-            setLimit(value);
-          }}
-          value={limit}
-          valueList={[10, 25, 50, 75, 100]}
-        />
+        <div id="dropdown-container">
+          <BasicSelect
+            setFunction={(value) => {
+              setSkip(0);
+              setLimit(value);
+            }}
+            value={limit}
+            valueList={[10, 25, 50, 75, 100]}
+          />
+          <p style={{ marginLeft: "10px", marginRight: "5px" }}>
+            Total Books Found : {resultCount}
+          </p>
+        </div>
       </div>
     </div>
   );

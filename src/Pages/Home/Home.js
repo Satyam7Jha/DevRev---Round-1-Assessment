@@ -14,6 +14,10 @@ export default function Home() {
   const [skip, setSkip] = useState(0);
   const [limit, setLimit] = useState(10);
   const [totalPages, setTotalPages] = useState(BOOKDATA.length);
+  const [resultCount, setSetResultCount] = useState(BOOKDATA.length);
+  const [sortColoum, setSortColoum] = useState({
+    Date: false,
+  });
   const [searchBar, setSearchBar] = useState({
     searchValue: "",
     searchType: "Author",
@@ -31,6 +35,7 @@ export default function Home() {
       limit
     );
     setBookData(filterData["data"]);
+    setSetResultCount(filterData["totalLenght"]);
     setTotalPages(
       parseInt(filterData["totalLenght"] / limit) ==
         filterData["totalLenght"] / limit
@@ -49,12 +54,15 @@ export default function Home() {
         <SearchBar
           setSearchBar={setSearchBar}
           searchBar={searchBar}
-          valueList={["Author", "Title"]}
+          valueList={["Author", "Title", "Date"]}
         />
         <Filter setOpen={setFilterModal} />
       </div>
       {filterModal && (
-        <div id="filter-modal" onMouseLeave={() => setFilterModal(false)}>
+        <div
+          id="filter-modal"
+          onMouseLeave={() => setFilterModal(!filterModal)}
+        >
           <FilterModal setSearchBar={setSearchBar} searchBar={searchBar} />
         </div>
       )}
@@ -66,6 +74,9 @@ export default function Home() {
         setSkip={setSkip}
         setLimit={setLimit}
         totalPage={totalPages}
+        resultCount={resultCount}
+        sortColoum={sortColoum}
+        setSortColoum={setSortColoum}
       />
     </div>
   );

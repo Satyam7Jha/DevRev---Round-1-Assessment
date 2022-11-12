@@ -7,6 +7,7 @@ export const BOOKDATA = [
     price: 5,
     availableItems: 7,
     Subject: "Philosophy",
+    date: "02-02-2006",
   },
   {
     key: "2",
@@ -16,6 +17,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 8,
     Subject: "Autobiography",
+    date: "11-03-1999",
   },
   {
     key: "3",
@@ -25,6 +27,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 6,
     Subject: "Autobiography",
+    date: "01-03-2018",
   },
   {
     key: "4",
@@ -34,6 +37,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 2,
     Subject: "Historical Fiction",
+    date: "08-04-2011",
   },
   {
     key: "5",
@@ -43,6 +47,7 @@ export const BOOKDATA = [
     price: 2,
     availableItems: 1,
     Subject: "Programming",
+    date: "07-08-2001",
   },
   {
     key: "6",
@@ -52,6 +57,7 @@ export const BOOKDATA = [
     price: 5,
     availableItems: 7,
     Subject: "Philosophy",
+    date: "04-06-2008",
   },
   {
     key: "7",
@@ -61,6 +67,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 8,
     Subject: "Philosophy",
+    date: "09-06-1997",
   },
   {
     key: "8",
@@ -70,6 +77,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 6,
     Subject: "Autobiography",
+    date: "12-06-2012",
   },
   {
     key: "9",
@@ -79,6 +87,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 2,
     Subject: "Historical Fiction",
+    date: "28-02-2012",
   },
   {
     key: "10",
@@ -88,6 +97,7 @@ export const BOOKDATA = [
     price: 2,
     availableItems: 1,
     Subject: "Science",
+    date: "04-06-2014",
   },
   {
     key: "11",
@@ -97,6 +107,7 @@ export const BOOKDATA = [
     price: 5,
     availableItems: 7,
     Subject: "Engineering",
+    date: "06-07-2008",
   },
   {
     key: "12",
@@ -106,6 +117,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 8,
     Subject: "Vision",
+    date: "07-07-2007",
   },
   {
     key: "13",
@@ -115,6 +127,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 6,
     Subject: "Sports",
+    date: "06-09-2019",
   },
   {
     key: "14",
@@ -124,6 +137,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 2,
     Subject: "Historical Fiction",
+    date: "24-02-1976",
   },
   {
     key: "15",
@@ -133,6 +147,7 @@ export const BOOKDATA = [
     price: 2,
     availableItems: 1,
     Subject: "Engineering",
+    date: "16-05-2000",
   },
   {
     key: "1",
@@ -142,6 +157,7 @@ export const BOOKDATA = [
     price: 5,
     availableItems: 7,
     Subject: "Philosophy",
+    date: "02-02-2006",
   },
   {
     key: "2",
@@ -151,6 +167,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 8,
     Subject: "Autobiography",
+    date: "11-03-1999",
   },
   {
     key: "3",
@@ -160,6 +177,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 6,
     Subject: "Autobiography",
+    date: "01-03-2018",
   },
   {
     key: "4",
@@ -169,6 +187,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 2,
     Subject: "Historical Fiction",
+    date: "08-04-2011",
   },
   {
     key: "5",
@@ -178,6 +197,7 @@ export const BOOKDATA = [
     price: 2,
     availableItems: 1,
     Subject: "Programming",
+    date: "07-08-2001",
   },
   {
     key: "6",
@@ -187,6 +207,7 @@ export const BOOKDATA = [
     price: 5,
     availableItems: 7,
     Subject: "Philosophy",
+    date: "04-06-2008",
   },
   {
     key: "7",
@@ -196,6 +217,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 8,
     Subject: "Philosophy",
+    date: "09-06-1997",
   },
   {
     key: "8",
@@ -205,6 +227,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 6,
     Subject: "Autobiography",
+    date: "12-06-2012",
   },
   {
     key: "9",
@@ -214,6 +237,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 2,
     Subject: "Historical Fiction",
+    date: "28-02-2012",
   },
   {
     key: "10",
@@ -223,6 +247,7 @@ export const BOOKDATA = [
     price: 2,
     availableItems: 1,
     Subject: "Science",
+    date: "04-06-2014",
   },
   {
     key: "11",
@@ -232,6 +257,7 @@ export const BOOKDATA = [
     price: 5,
     availableItems: 7,
     Subject: "Engineering",
+    date: "06-07-2008",
   },
   {
     key: "12",
@@ -241,6 +267,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 8,
     Subject: "Vision",
+    date: "07-07-2007",
   },
   {
     key: "13",
@@ -250,6 +277,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 6,
     Subject: "Sports",
+    date: "06-09-2019",
   },
   {
     key: "14",
@@ -259,6 +287,7 @@ export const BOOKDATA = [
     price: 4,
     availableItems: 2,
     Subject: "Historical Fiction",
+    date: "24-02-1976",
   },
   {
     key: "15",
@@ -268,5 +297,6 @@ export const BOOKDATA = [
     price: 2,
     availableItems: 1,
     Subject: "Engineering",
+    date: "16-05-2000",
   },
 ];

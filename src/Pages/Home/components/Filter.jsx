@@ -11,7 +11,7 @@ function Filter({ setOpen }) {
       onClick={() => setOpen(true)}
     >
       <p class="filter-text">Filter</p>
-      <img style = {{height:"25px",paddingRight:"20px"}} src={filterIcon}/>
+      <img class="filter-icon" src={filterIcon}/>
     </div>
   );
 }

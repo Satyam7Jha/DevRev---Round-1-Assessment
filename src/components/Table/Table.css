@@ -51,6 +51,12 @@ font-style: normal;
 font-weight: 400;
 font-size: 16px;
  }
+ #dropdown-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+ }
 
  @media screen and (max-width: 600px) {
 
@@ -60,8 +66,10 @@ font-size: 16px;
     }
     #page-number-container {
         flex-direction:row-reverse;
-
- 
     } 
+    #dropdown-container{
+        display: flex;
+        flex-direction: column;
+     }
     
  }
