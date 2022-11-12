@@ -5,8 +5,9 @@
 footer {
   background: #dddee1;
   padding: 2vh 0;
+  width: 100%;
   text-align: center;
-  position: relative;
+  position: absolute;
   bottom:0
 }
 header {
