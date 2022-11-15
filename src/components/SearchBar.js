@@ -24,7 +24,6 @@ export default function SearchBar({ setSearchBar, searchBar, valueList }) {
         }}
         sx={{ ml: 1, flex: 1 }}
         placeholder={`Search by ${searchBar.searchType}...`}
-        inputProps={{ "aria-label": "search google maps" }}
         onChange={(e) =>
           setSearchBar({ ...searchBar, searchValue: e.target.value })
         }

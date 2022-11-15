@@ -8,6 +8,8 @@ import FilterModal from "./components/FilterModal";
 import TableComponent from "../../components/Table/Table";
 import { filterBooks } from "../../Utils/helperFunctions";
 
+import ModalComponent from "../../components/Modal";
+
 export default function Home() {
   const [bookData, setBookData] = useState(BOOKDATA);
   const [filterModal, setFilterModal] = useState(false);
@@ -15,9 +17,15 @@ export default function Home() {
   const [limit, setLimit] = useState(10);
   const [totalPages, setTotalPages] = useState(BOOKDATA.length);
   const [resultCount, setSetResultCount] = useState(BOOKDATA.length);
+
+  const [modal, setModal] = useState({
+    visible: false,
+    data: {},
+  });
   const [sortColoum, setSortColoum] = useState({
     Date: false,
   });
+
   const [searchBar, setSearchBar] = useState({
     searchValue: "",
     searchType: "Author",
@@ -66,7 +74,6 @@ export default function Home() {
           <FilterModal setSearchBar={setSearchBar} searchBar={searchBar} />
         </div>
       )}
-
       <TableComponent
         data={bookData}
         skip={skip}
@@ -77,7 +84,10 @@ export default function Home() {
         resultCount={resultCount}
         sortColoum={sortColoum}
         setSortColoum={setSortColoum}
+        modal={modal}
+        setModal={setModal}
       />
+      <ModalComponent modal={modal} setModal={setModal} />
     </div>
   );
 }

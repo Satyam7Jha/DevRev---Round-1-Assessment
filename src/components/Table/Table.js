@@ -26,8 +26,8 @@ function TableComponent({
   setLimit,
   totalPage,
   resultCount,
-  sortColoum,
-  setSortColoum,
+  setModal,
+  modal,
 }) {
   const defaultOptions = {
     loop: true,
@@ -36,6 +36,9 @@ function TableComponent({
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
+  };
+  const handleClick = (row) => {
+    setModal({ visible: true, data: row });
   };
   return (
     <div className="table-container">
@@ -59,6 +62,7 @@ function TableComponent({
                 class="tablRow"
                 key={ind}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                onClick={() => handleClick(row)}
               >
                 <TableCell>{skip + ind + 1}</TableCell>
                 <TableCell>{row.isbn.toString().slice(0, 6)}</TableCell>
@@ -138,7 +142,7 @@ function TableComponent({
             valueList={[10, 25, 50, 75, 100]}
           />
           <p style={{ marginLeft: "10px", marginRight: "5px" }}>
-            Total Books Found : {resultCount}
+            Results : {resultCount}
           </p>
         </div>
       </div>
