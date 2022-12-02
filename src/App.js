@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Home from "./Pages/Home/Home";
 
@@ -8,13 +7,16 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h2>Library management</h2>
+          <h2>Library Management</h2>
         </header>
         <Home />
         <footer>
           <small>
-            🕷 Wish you luck,{" "}
-            <a href="https://github.com/Satyam7Jha/DevRev---Round-1-Assessment">
+            Wish you luck,{" "}
+            <a
+              target="_blank"
+              href="https://github.com/Satyam7Jha/DevRev---Round-1-Assessment"
+            >
               Satyam Jha
             </a>
             .

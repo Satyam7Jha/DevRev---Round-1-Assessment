@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import "./Home.css";
 import { BOOKDATA } from "../../data";
 import Filter from "./components/Filter";
@@ -7,7 +6,6 @@ import SearchBar from "../../components/SearchBar";
 import FilterModal from "./components/FilterModal";
 import TableComponent from "../../components/Table/Table";
 import { filterBooks } from "../../Utils/helperFunctions";
-
 import ModalComponent from "../../components/Modal";
 
 export default function Home() {
@@ -15,7 +13,7 @@ export default function Home() {
   const [filterModal, setFilterModal] = useState(false);
   const [skip, setSkip] = useState(0);
   const [limit, setLimit] = useState(10);
-  const [totalPages, setTotalPages] = useState(BOOKDATA.length);
+  const [totalPages, setTotalPages] = useState(0);
   const [resultCount, setSetResultCount] = useState(BOOKDATA.length);
 
   const [modal, setModal] = useState({
@@ -43,12 +41,12 @@ export default function Home() {
       limit
     );
     setBookData(filterData["data"]);
-    setSetResultCount(filterData["totalLenght"]);
+    setSetResultCount(filterData["totalLength"]);
     setTotalPages(
-      parseInt(filterData["totalLenght"] / limit) ==
-        filterData["totalLenght"] / limit
-        ? filterData["totalLenght"] / limit
-        : parseInt(filterData["totalLenght"] / limit) + 1
+      parseInt(filterData["totalLength"] / limit) ==
+        filterData["totalLength"] / limit
+        ? filterData["totalLength"] / limit
+        : parseInt(filterData["totalLength"] / limit) + 1
     );
   }, [searchBar.searchButton, searchBar.Subject, skip, limit]);
 
@@ -64,7 +62,7 @@ export default function Home() {
           searchBar={searchBar}
           valueList={["Author", "Title", "Date"]}
         />
-        <Filter setOpen={setFilterModal} />
+        <Filter setOpen={setFilterModal} filterModal={filterModal} />
       </div>
       {filterModal && (
         <div

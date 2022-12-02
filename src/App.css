@@ -1,20 +1,4 @@
-.App {
-  text-align: center;
-}
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 25px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  background-color: #dddee1;
-  color: black;
-}
 header {
   color: #fff;
   background-color:#1976d2 ;
@@ -24,7 +8,19 @@ header {
   display: flex;
   position: fixed;
   align-items: center;
-  text-align: center;
+  text-align: right;
   z-index: 1000;
   box-shadow: 5px 5px 3px  #999
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dddee1;
+  color: black;
 }

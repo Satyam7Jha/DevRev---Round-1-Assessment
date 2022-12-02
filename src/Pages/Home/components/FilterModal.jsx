@@ -22,17 +22,18 @@ export default function FilterModal({ setSearchBar, searchBar }) {
 
         
        
-        <FormControlLabel
-          value="Science"
-          control={<Radio />}
-          label="Science"
-        />
-        
+       
         <FormControlLabel
           value="Sports"
           control={<Radio />}
           label="Sports"
         />
+         <FormControlLabel
+          value="Science"
+          control={<Radio />}
+          label="Science"
+        />
+        
         <FormControlLabel value="Philosophy" control={<Radio />} label="Philosophy" />
 
         

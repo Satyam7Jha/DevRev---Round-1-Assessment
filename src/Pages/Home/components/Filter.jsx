@@ -3,12 +3,12 @@ import filterIcon from "../../../assets/filterIcon.png"
 import Tooltip from "@mui/material/Tooltip";
 
 import "./Filter.css";
-function Filter({ setOpen }) {
+function Filter({ setOpen,filterModal }) {
   return (
     <div
       class="filter"
      
-      onClick={() => setOpen(true)}
+      onClick={() => setOpen(!filterModal)}
     >
       <p class="filter-text">Filter</p>
       <img class="filter-icon" src={filterIcon}/>
